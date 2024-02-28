@@ -1,13 +1,16 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools", "setuptools-scm", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "winclear"
-version = "0.1.0"
 description = "Clear stdout on Windows command prompt"
+dynamic = ["version"]
 readme = "README.md"
 requires-python = ">=3.9"
 
 [project.scripts]
-winclear = "clear:main"
+clear = "clear:main"
+
+[tool.setuptools_scm]
+version_file = "src/winclear/_version.py"
